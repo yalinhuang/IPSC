@@ -1,0 +1,215 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IPSC 2010 Problem A – Antisort &mdash; IPSC</title>
+    <meta name="keywords" content="IPSC, programming, contest, online contest">
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    
+</head>
+<body>
+
+    
+        <div class="navbar">
+        <div class="inside">
+            
+            
+                
+                <span class="navitem"><a href="/">Home</a></span>
+            
+                |
+                <span class="navitem"><a href="/rules">Rules</a></span>
+            
+                |
+                <span class="navitem"><a href="/organizers">Organizers</a></span>
+            
+                |
+                <span class="navitem"><a href="/archive">Task Archive</a></span>
+            
+                |
+                <span class="navitem"><a href="/train/">Training Area</a></span>
+            
+                |
+                <span class="navitem"><a href="/halloffame">Hall of Fame</a></span>
+            
+        </div>
+        </div>
+    
+        <div class="navbar">
+        <div class="inside">
+            
+            
+                
+                <span class="navitem">IPSC 2014</span>
+            
+                |
+                <span class="navitem"><a href="/2014/practice/problems/">Practice Session</a></span>
+            
+                |
+                <span class="navitem"><a href="/2014/register">Registration</a></span>
+            
+                |
+                <span class="navitem"><a href="/2014/teams">Registered Teams</a></span>
+            
+        </div>
+        </div>
+    
+
+    <div class="title clearfix">
+    <div class="inside">
+        <div class="ipscimg">
+            <a href="http://ipsc.ksp.sk/"><img
+            src="/static/ipsc.gif" alt="IPSC Logo"></a>
+        </div>
+        <h1>Internet Problem Solving Contest</h1>
+        <h2>IPSC 2010</h2>
+        <h2>Problem A – Antisort</h2>
+    </div>
+    </div>
+
+    <div class="telo">
+    <div class="inside">
+        
+
+        
+<ul>
+    
+        <li><a href="a1.in">Easy input data set – A1</a></li>
+    
+        <li><a href="a2.in">Hard input data set – A2</a></li>
+    
+</ul>
+
+
+
+<!--l. 4--><p class="indent" >   Usually, in programming contests the problem statement tells you what to do. We find that
+boring.
+<!--l. 8--><p class="indent" >   In this task we do the opposite. We will tell you something you <span 
+class="cmbx-10">must not </span>do:
+   <div  
+class="centerline">                                           <span 
+class="cmti-10">You must not sort the given sequence.</span>                                        </div>
+<!--l. 15--><p class="noindent" ><span 
+class="cmssbx-10">Problem specification</span>
+<!--l. 16--><p class="indent" >   Given is a sequence <span 
+class="cmmi-10">S </span>of distinct integers. Rearrange the sequence in any way. The only condition is that the
+resulting sequence must not be sorted &#8211; neither in ascending nor in descending order.
+<!--l. 20--><p class="noindent" ><span 
+class="cmssbx-10">Input specification</span>
+<!--l. 21--><p class="indent" >   The first line of the input file contains an integer <span 
+class="cmmi-10">T </span>specifying the number of test cases. Each test case is
+preceded by a blank line.
+<!--l. 24--><p class="indent" >   Each test case consists of two lines. The first line contains a number <span 
+class="cmmi-10">N </span>(between 3 and 1000, inclusive) giving
+the length of the sequence. The second line contains <span 
+class="cmmi-10">N </span>space separated numbers that form the sequence.
+No two of these <span 
+class="cmmi-10">N </span>numbers are equal, and all of these numbers fit into a 32-bit signed integer
+variable.
+<!--l. 29--><p class="noindent" ><span 
+class="cmssbx-10">Output specification</span>
+<!--l. 30--><p class="indent" >   The output format is the same as the input format, with one exception: The whitespaces may
+be arbitrary. Just make sure that every two tokens in the output are separated by at least one
+whitespace.
+<!--l. 33--><p class="indent" >   Each sequence in the output must contain the same numbers as the corresponding input sequence, and they
+must not be in sorted order.
+<!--l. 38--><p class="noindent" ><span 
+class="cmssbx-10">Example</span>
+<!--l. 49--><p class="noindent" ><div class="minipage"><span 
+class="cmbx-10">input</span>
+<div class="fbox">
+<span 
+class="cmtt-10">2</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">5</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">1</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;3</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;5</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">8</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">3</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;47</span><span 
+class="cmtt-10">&#x00A0;5</span><span 
+class="cmtt-10">&#x00A0;9</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;6</span>                      </div>
+</div>
+                                                                                       
+
+                                                                                       
+<div class="minipage"><span 
+class="cmbx-10">output</span>
+<div class="fbox">
+<span 
+class="cmtt-10">2</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">5</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">5</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;3</span><span 
+class="cmtt-10">&#x00A0;2</span>
+<span 
+class="cmtt-10"></span><br />
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">8</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">3</span><span 
+class="cmtt-10">&#x00A0;1</span><span 
+class="cmtt-10">&#x00A0;4</span><span 
+class="cmtt-10">&#x00A0;47</span>
+<span 
+class="cmtt-10"></span><br /><span 
+class="cmtt-10">5</span><span 
+class="cmtt-10">&#x00A0;9</span><span 
+class="cmtt-10">&#x00A0;2</span><span 
+class="cmtt-10">&#x00A0;6</span>                               </div>
+</div>
+                                                                                       
+
+                                                                                       
+    
+
+
+    </div>
+    </div>
+
+    <div class="footer clearfix">
+    <div class="inside">
+        <div class="footer-cell">
+            contact:
+            ipscreg(at)ksp(dot)sk
+        </div>
+        <div class="footer-cell-right">
+            server time: 2014-05-17 22:37:18 UTC
+        </div>
+        
+    </div>
+    </div>
+
+</body>
+</html>
