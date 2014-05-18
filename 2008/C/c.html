@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>IPSC 2008 Problem C – Comparison Mysteries &mdash; IPSC</title>
+    <meta name="keywords" content="IPSC, programming, contest, online contest">
+    <link rel="stylesheet" type="text/css" href="/static/main.css">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    
+</head>
+<body>
+
+    
+        <div class="navbar">
+        <div class="inside">
+            
+            
+                
+                <span class="navitem"><a href="/">Home</a></span>
+            
+                |
+                <span class="navitem"><a href="/rules">Rules</a></span>
+            
+                |
+                <span class="navitem"><a href="/organizers">Organizers</a></span>
+            
+                |
+                <span class="navitem"><a href="/archive">Task Archive</a></span>
+            
+                |
+                <span class="navitem"><a href="/train/">Training Area</a></span>
+            
+                |
+                <span class="navitem"><a href="/halloffame">Hall of Fame</a></span>
+            
+        </div>
+        </div>
+    
+        <div class="navbar">
+        <div class="inside">
+            
+            
+                
+                <span class="navitem">IPSC 2014</span>
+            
+                |
+                <span class="navitem"><a href="/2014/practice/problems/">Practice Session</a></span>
+            
+                |
+                <span class="navitem"><a href="/2014/register">Registration</a></span>
+            
+                |
+                <span class="navitem"><a href="/2014/teams">Registered Teams</a></span>
+            
+        </div>
+        </div>
+    
+
+    <div class="title clearfix">
+    <div class="inside">
+        <div class="ipscimg">
+            <a href="http://ipsc.ksp.sk/"><img
+            src="/static/ipsc.gif" alt="IPSC Logo"></a>
+        </div>
+        <h1>Internet Problem Solving Contest</h1>
+        <h2>IPSC 2008</h2>
+        <h2>Problem C – Comparison Mysteries</h2>
+    </div>
+    </div>
+
+    <div class="telo">
+    <div class="inside">
+        
+
+        
+<ul>
+    
+        <li>This problem has no input files.</li>
+    
+</ul>
+
+
+<!--l. 5--><p class="indent" >   For beginners in programming it often comes as a great surprise when numbers inside a computer refuse
+to behave the same way numbers in mathematics do. In this task, we will investigate two such
+cases.
+<!--l. 10--><p class="indent" >   The ideas needed to solve this task are neither platform-specific, nor language-specific. However, due to many
+subtle differences between various programming languages the best way to state this task was to pick a single
+language. In this case that language will be Java.
+<!--l. 16--><p class="indent" >   We will be using numeric variables only, and only the following six basic types:
+     <ul class="itemize1">
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">byte</span></span></span>, a signed integer from -128 to 127, inclusive
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">short</span></span></span>, a signed integer from -32768 to 32767, inclusive
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">int</span></span></span>, a signed integer from -2147483648 to 2147483647, inclusive
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">long</span></span></span>, a signed integer from -9223372036854775808 to 9223372036854775807, inclusive
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">float</span></span></span>, a 32-bit floating point number (24 bits sign+mantissa, 8 bits exponent)
+     </li>
+     <li class="itemize"><span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">double</span></span></span>, a 64-bit floating point number (53 bits sign+mantissa, 11 bits exponent)</li></ul>
+<!--l. 27--><p class="indent" >   For each of these types, the Scanner class has a corresponding method (e.g., <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">nextByte</span></span></span> for <span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">byte</span></span></span>) that scans
+the next token of the input as the given type.
+<!--l. 31--><p class="noindent" ><span 
+class="cmssbx-10">Easy data set</span>
+<!--l. 33--><p class="indent" >   Obviously, in mathematics the only solution to <span 
+class="cmmi-10">x </span>= <span 
+class="cmsy-10">-</span><span 
+class="cmmi-10">x </span>is zero. Now consider the following Java
+code:
+<!--l. 45--><p class="noindent" ><table class="minipage"><tr><td>Java code template
+<div class="fbox"><table class="minipage"><tr><td><div class="obeylines-v">
+<br /><span 
+class="cmtt-10">import java.util.*;</span>
+<br /><span 
+class="cmtt-10">public class C1 </span><span 
+class="cmsy-10">{</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;public static void main(String args[]) </span><span 
+class="cmsy-10">{</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;Scanner sc = new Scanner(System.in); sc.useLocale(Locale.US);</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;????? x = sc.?????();</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;System.out.println( (x==-x) + " " + (x!=0) );</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmsy-10">}</span>
+<br /><span 
+class="cmsy-10">}</span></div>                                                                                    </td></tr></table> </div>
+</td></tr></table>
+                                                                                       
+
+                                                                                       
+<!--l. 48--><p class="indent" >   We would like you to show that there are cases when a non-zero number is equal to its own
+negation. Choose the type of the variable <span 
+class="cmmi-10">x </span>and provide input to this program so that it outputs
+&#8220;<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">true</span><span 
+class="cmtt-10">&#x00A0;true</span></span></span>&#8221;.
+<!--l. 52--><p class="indent" >   Submit your answer as a text file with two lines. In the first line, write the type of the variable <span 
+class="cmmi-10">x</span>, in the
+second line a string that shall be used as the input for your program.
+<!--l. 56--><p class="indent" >   An example submission follows. This submission is syntactically correct, but it does not produce the desired
+output.
+<!--l. 63--><p class="noindent" ><table class="minipage"><tr><td>Your submission
+<div class="fbox"><table class="minipage"><tr><td><div class="obeylines-v">
+<br /><span 
+class="cmtt-10">short</span>
+<br /><span 
+class="cmtt-10">47</span></div>                                                                                   </td></tr></table> </div>
+</td></tr></table>
+<!--l. 74--><p class="noindent" ><table class="minipage"><tr><td>The corresponding Java code
+<div class="fbox"><table class="minipage"><tr><td><div class="obeylines-v">
+<br /><span 
+class="cmtt-10">import java.util.*;</span>
+<br /><span 
+class="cmtt-10">public class C1 </span><span 
+class="cmsy-10">{</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;public static void main(String args[]) </span><span 
+class="cmsy-10">{</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;Scanner sc = new Scanner(System.in); sc.useLocale(Locale.US);</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;short x = sc.nextShort();</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;System.out.println( (x==-x) + " " + (x!=0) );</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmsy-10">}</span>
+<br /><span 
+class="cmsy-10">}</span></div>                                                                                    </td></tr></table> </div>
+</td></tr></table>
+<!--l. 78--><p class="noindent" ><table class="minipage"><tr><td>Its output on your input
+<div class="fbox"><table class="minipage"><tr><td><div class="obeylines-v">
+<br /><span 
+class="cmtt-10">false true</span></div>                                                                           </td></tr></table> </div>
+</td></tr></table>
+<!--l. 80--><p class="noindent" ><span 
+class="cmssbx-10">Hard data set</span>
+<!--l. 82--><p class="indent" >   An even more obvious fact is that whenever <span 
+class="cmmi-10">x </span>= <span 
+class="cmmi-10">y </span>and <span 
+class="cmmi-10">y </span>= <span 
+class="cmmi-10">z</span>, we must have <span 
+class="cmmi-10">x </span>= <span 
+class="cmmi-10">z </span>as well. Now consider the
+following Java code:
+<!--l. 96--><p class="noindent" ><table class="minipage"><tr><td>Java code template
+<div class="fbox"><table class="minipage"><tr><td><div class="obeylines-v">
+<br /><span 
+class="cmtt-10">import java.util.*;</span>
+<br /><span 
+class="cmtt-10">public class C2 </span><span 
+class="cmsy-10">{</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;public static void main(String args[]) </span><span 
+class="cmsy-10">{</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;Scanner sc = new Scanner(System.in); sc.useLocale(Locale.US);</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;????? x = sc.?????();</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;????? y = sc.?????();</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;????? z = sc.?????();</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;System.out.println( (x==y) + " " + (y==z) + " " + (x==z) );</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmsy-10">}</span>
+<br /><span 
+class="cmsy-10">}</span></div>                                                                                    </td></tr></table> </div>
+</td></tr></table>
+<!--l. 99--><p class="indent" >   We would like you to show that there are cases when equality is not transitive. Choose the types of the
+                                                                                       
+
+                                                                                       
+variables <span 
+class="cmmi-10">x</span>, <span 
+class="cmmi-10">y</span>, and <span 
+class="cmmi-10">z </span>and provide input to this program so that it outputs &#8220;<span class="obeylines-h"><span class="verb"><span 
+class="cmtt-10">true</span><span 
+class="cmtt-10">&#x00A0;true</span><span 
+class="cmtt-10">&#x00A0;false</span></span></span>&#8221;.
+<!--l. 103--><p class="indent" >   Submit your answer as a text file with six lines. In the first three lines, write the types of the variables
+<span 
+class="cmmi-10">x</span>, <span 
+class="cmmi-10">y</span>, and <span 
+class="cmmi-10">z</span>. In the second three lines write the strings that shall be used as the input for your
+program.
+<!--l. 107--><p class="indent" >   An example submission follows. This submission is syntactically correct, but it does not produce the desired
+output.
+<!--l. 118--><p class="noindent" ><table class="minipage"><tr><td>Your submission
+<div class="fbox"><table class="minipage"><tr><td><div class="obeylines-v">
+<br /><span 
+class="cmtt-10">short</span>
+<br /><span 
+class="cmtt-10">short</span>
+<br /><span 
+class="cmtt-10">int</span>
+<br /><span 
+class="cmtt-10">47</span>
+<br /><span 
+class="cmtt-10">47</span>
+<br /><span 
+class="cmtt-10">47</span></div>                                                                                   </td></tr></table> </div>
+</td></tr></table>
+<!--l. 131--><p class="noindent" ><table class="minipage"><tr><td>The corresponding Java code
+<div class="fbox"><table class="minipage"><tr><td><div class="obeylines-v">
+<br /><span 
+class="cmtt-10">import java.util.*;</span>
+<br /><span 
+class="cmtt-10">public class C2 </span><span 
+class="cmsy-10">{</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;public static void main(String args[]) </span><span 
+class="cmsy-10">{</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;Scanner sc = new Scanner(System.in); sc.useLocale(Locale.US);</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;short x = sc.nextShort();</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;short y = sc.nextShort();</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;int z = sc.nextInt();</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmtt-10">&#x00A0;System.out.println( (x==y) + " " + (y==z) + " " + (x==z) );</span>
+<br /><span 
+class="cmtt-10"></span><span 
+class="cmtt-10"></span><span 
+class="cmsy-10">}</span>
+<br /><span 
+class="cmsy-10">}</span></div>                                                                                    </td></tr></table> </div>
+</td></tr></table>
+<!--l. 135--><p class="noindent" ><table class="minipage"><tr><td>Its output on your input
+<div class="fbox"><table class="minipage"><tr><td><div class="obeylines-v">
+<br /><span 
+class="cmtt-10">true true true</span></div>                                                                       </td></tr></table> </div>
+</td></tr></table>
+<!--l. 137--><p class="noindent" ><span 
+class="cmssbx-10">Applets</span>
+<!--l. 139--><p class="indent" >   For easy experimentation we provide an applet for each of the subproblems, where you can set variable types
+and values, and let the applet produce the output for you.
+     <ul class="itemize1">
+     <li class="itemize">Applet for the easy data set:   <a 
+href="C1applet.html" class="url" ><span 
+class="cmtt-10">C1applet.html</span></a>
+     </li>
+     <li class="itemize">Applet for the hard data set:   <a 
+href="C2applet.html" class="url" ><span 
+class="cmtt-10">C2applet.html</span></a></li></ul>
+<!--l. 148--><p class="noindent" ><span 
+class="cmssbx-10">Java documentation</span>
+<!--l. 150--><p class="indent" >   This section is not strictly necessary to solve the problem. But in case someone feels the need to browse the
+Java documentation to check something out, we provide links to the online version of <span 
+class="cmti-10">The Java Language</span>
+<span 
+class="cmti-10">Specification, Third Edition </span>you might consider useful:
+                                                                                       
+
+                                                                                       
+     <ul class="itemize1">
+     <li class="itemize">Main page: <br 
+class="newline" />  <a 
+href="http://java.sun.com/docs/books/jls/third_edition/html/j3TOC.html" class="url" ><span 
+class="cmtt-10">http://java.sun.com/docs/books/jls/third_edition/html/j3TOC.html</span></a>
+     </li>
+     <li class="itemize">4.2 Primitive Types and Values: <br 
+class="newline" />  <a 
+href="http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2" class="url" ><span 
+class="cmtt-10">http://java.sun.com/docs/books/jls/third_edition/html/typesValues.html#4.2</span></a>
+     </li>
+     <li class="itemize">5.6 Numeric Promotions: <br 
+class="newline" />  <a 
+href="http://java.sun.com/docs/books/jls/third_edition/html/conversions.html#5.6" class="url" ><span 
+class="cmtt-10">http://java.sun.com/docs/books/jls/third_edition/html/conversions.html#5.6</span></a></li></ul>
+
+
+    </div>
+    </div>
+
+    <div class="footer clearfix">
+    <div class="inside">
+        <div class="footer-cell">
+            contact:
+            ipscreg(at)ksp(dot)sk
+        </div>
+        <div class="footer-cell-right">
+            server time: 2014-05-18 16:28:25 UTC
+        </div>
+        
+    </div>
+    </div>
+
+</body>
+</html>
